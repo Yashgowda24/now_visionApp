@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -17,6 +20,8 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController eidController = TextEditingController();
 
+  File? _imageFile;
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -27,6 +32,30 @@ class _SignUpPageState extends State<SignUpPage> {
     titleController.dispose();
     eidController.dispose();
     super.dispose();
+  }
+
+  Future<void> _pickImage() async {
+    final pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 80,
+    );
+
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+      Fluttertoast.showToast(
+        msg: 'Profile photo updated!',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.TOP,
+      );
+    } else {
+      Fluttertoast.showToast(
+        msg: 'No image selected!',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.TOP,
+      );
+    }
   }
 
   @override
@@ -74,21 +103,16 @@ class _SignUpPageState extends State<SignUpPage> {
                   Stack(
                     children: [
                       CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/images/User-120.png'),
+                        backgroundImage: _imageFile != null
+                            ? FileImage(_imageFile!) as ImageProvider
+                            : AssetImage('assets/images/User-120.png'),
                         radius: 60.0,
                       ),
                       Positioned(
                         bottom: 0,
                         right: 0,
                         child: GestureDetector(
-                          onTap: () {
-                            Fluttertoast.showToast(
-                              msg: 'Button pressed!',
-                              toastLength: Toast.LENGTH_SHORT,
-                              fontSize: 16.0,
-                            );
-                          },
+                          onTap: _pickImage,
                           child: Image.asset('assets/images/ButtonIcon.png'),
                         ),
                       ),
