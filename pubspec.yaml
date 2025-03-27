@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.0
   fluttertoast: ^8.2.2
   image_picker: ^1.0.5
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:
@@ -77,8 +78,10 @@ flutter:
   fonts:
     - family: SFProDisplay
       fonts:
-        # - asset: fonts/SFPRODISPLAYREGULAR.otf
         - asset: fonts/SFPRODISPLAYBOLD.otf
+    - family: Gilroy
+      fonts:
+        - asset: fonts/Gilroy-Bold.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

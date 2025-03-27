@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:now_vision/views/main_menu.dart';
 import 'package:now_vision/views/sign_up.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: SignUpPage(),
+      // home: MainMenu(),
     );
   }
 }

@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:now_vision/views/main_menu.dart';
+import 'package:now_vision/widgets/blue_button.dart';
+import 'package:now_vision/widgets/textfield_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -163,30 +166,16 @@ class _SignUpPageState extends State<SignUpPage> {
                   SizedBox(
                     height: 16,
                   ),
-                  ElevatedButton(
+                  BlueColorFullWidthButton(
                     onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: 'Signup-Button pressed!',
-                        toastLength: Toast.LENGTH_SHORT,
-                        fontSize: 16.0,
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MainMenu(),
+                        ),
                       );
                     },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromRGBO(40, 56, 145, 1),
-                      minimumSize:
-                          Size(MediaQuery.of(context).size.width * 0.9, 61),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign up',
-                      style: GoogleFonts.raleway(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(255, 255, 255, 1),
-                      ),
-                    ),
+                    text: 'Sign up',
                   ),
                   SizedBox(
                     height: 25,
@@ -195,56 +184,6 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class TextFieldWidget extends StatelessWidget {
-  final String text;
-  final TextEditingController controller;
-
-  TextFieldWidget({required this.text, required this.controller});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.9,
-      child: Container(
-        padding: EdgeInsets.only(left: 15, right: 10, top: 5),
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 1,
-            color: Colors.blueGrey,
-          ),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              text,
-              style: GoogleFonts.outfit(
-                fontSize: 12.0,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            SizedBox(
-              height: 0,
-            ),
-            TextField(
-              controller: controller,
-              style: GoogleFonts.outfit(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w500,
-                color: Color.fromRGBO(0, 0, 0, 1),
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-              ),
-            ),
-          ],
         ),
       ),
     );
