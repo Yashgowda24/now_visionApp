@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:now_vision/views/main_menu.dart';
-import 'package:now_vision/views/sign_up.dart';
+import 'package:now_vision/views/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: SignUpPage(),
-      // home: MainMenu(),
+      home: LoginScreen(),
     );
   }
 }

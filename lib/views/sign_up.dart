@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:now_vision/styles/text_styles.dart';
 import 'package:now_vision/views/main_menu.dart';
 import 'package:now_vision/widgets/blue_button.dart';
+import 'package:now_vision/widgets/now_vision_title.dart';
 import 'package:now_vision/widgets/textfield_widget.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -73,32 +73,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'Now Vision',
-                    style: GoogleFonts.changa(
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(
-                    'AI Analysed Platform',
-                    style: GoogleFonts.inter(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  NowVisionTextWidget(),
                   Text(
                     'Sign up',
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      fontSize: 24.0,
-                    ),
+                    style: TextStyles.loginSignupText,
                   ),
                   SizedBox(
                     height: 22.0,

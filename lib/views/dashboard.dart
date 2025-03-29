@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:now_vision/styles/text_styles.dart';
 import 'package:now_vision/widgets/blue_button.dart';
 import 'package:now_vision/widgets/white_button.dart';
 
@@ -25,6 +27,27 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Now Vision',
+          style: TextStyles.nowVisionAppBarTitle,
+        ),
+        actions: [
+          IconButton(
+            icon: Image.asset(
+              'assets/images/bell.png',
+              width: 24.0,
+            ),
+            onPressed: () {
+              print('notifi presses!');
+            },
+          ),
+          SizedBox(
+            width: 15,
+          )
+        ],
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,25 +124,31 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                             color: Color.fromRGBO(37, 56, 88, 1),
                           ),
                         ),
-                        child: DataTable(
-                          columns: [
-                            DataColumn(
-                              label: Text('Location'),
-                            ),
-                            DataColumn(
-                              label: Text('Date'),
-                            ),
-                            DataColumn(
-                              label: Text('Progress'),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: DataTable(
+                                columns: [
+                                  DataColumn(
+                                    label: Text('Location'),
+                                  ),
+                                  DataColumn(
+                                    label: Text('Date'),
+                                  ),
+                                  DataColumn(
+                                    label: Text('Progress'),
+                                  ),
+                                ],
+                                rows: inspections.map((item) {
+                                  return DataRow(cells: [
+                                    DataCell(Text(item["location"]!)),
+                                    DataCell(Text(item["date"]!)),
+                                    DataCell(Text(item["progress"]!)),
+                                  ]);
+                                }).toList(),
+                              ),
                             ),
                           ],
-                          rows: inspections.map((item) {
-                            return DataRow(cells: [
-                              DataCell(Text(item["location"]!)),
-                              DataCell(Text(item["date"]!)),
-                              DataCell(Text(item["progress"]!)),
-                            ]);
-                          }).toList(),
                         ),
                       ),
                     ),

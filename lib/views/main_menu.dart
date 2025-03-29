@@ -18,30 +18,6 @@ class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Now Vision',
-          style: GoogleFonts.changa(
-            fontSize: 24.0,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Image.asset(
-              'assets/images/bell.png',
-              width: 24.0,
-            ),
-            onPressed: () {
-              print('notifi presses!');
-            },
-          ),
-          SizedBox(
-            width: 15,
-          )
-        ],
-        centerTitle: true,
-      ),
       body: Center(
         child: pages[selectedIndex],
       ),

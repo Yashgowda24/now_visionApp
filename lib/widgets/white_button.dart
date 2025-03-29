@@ -21,11 +21,13 @@ class WhiteColorFullWidthButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      child: Text(text,
-          style: TextStyle(
-            fontFamily: 'Gilroy',
-            fontSize: 18.0,
-          )),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'Gilroy',
+          fontSize: 18.0,
+        ),
+      ),
     );
   }
 }
