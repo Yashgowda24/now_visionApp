@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:now_vision/styles/text_styles.dart';
-import 'package:now_vision/views/sign_up.dart';
+import 'package:now_vision/views/signup/sign_up.dart';
 import 'package:now_vision/widgets/blue_button.dart';
 import 'package:now_vision/widgets/login_textfield.dart';
 import 'package:now_vision/widgets/now_vision_title.dart';
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: " and agree to ",
                       style: GoogleFonts.mulish(
                         fontSize: 14.0,
-                        color: Color.fromRGBO(27, 77, 205, 1),
+                        color: Color.fromRGBO(34, 36, 15, 1),
                       ),
                     ),
                     TextSpan(

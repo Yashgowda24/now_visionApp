@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:now_vision/styles/text_styles.dart';
+import 'package:now_vision/views/Inspection_Screens/new_inspection1.dart';
 import 'package:now_vision/widgets/blue_button.dart';
 import 'package:now_vision/widgets/white_button.dart';
 
@@ -76,7 +77,14 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   ),
                   BlueColorFullWidthButton(
                     text: 'Start New Inspection',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StartNewInspection(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 20.0,

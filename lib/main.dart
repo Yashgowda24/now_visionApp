@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:now_vision/views/login.dart';
+import 'package:now_vision/views/login/login.dart';
 
 void main() {
   runApp(const MyApp());

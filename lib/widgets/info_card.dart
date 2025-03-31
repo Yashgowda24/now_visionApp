@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:now_vision/styles/text_styles.dart';
+import 'package:now_vision/views/Inspection_Screens/inspec_info.dart';
 
 class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              spreadRadius: 1,
-              blurRadius: 6,
-              offset: Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            _buildInfoRow(Image.asset('assets/images/location.png'),
-                "Location:", "Room 04"),
-            _buildDivider(),
-            _buildInfoRow(Image.asset('assets/images/task-square.png'),
-                "Construction Activities:", "Drywall..."),
-            _buildDivider(),
-            _buildProgressRow(),
-            _buildDivider(),
-            _buildInfoRow(Image.asset('assets/images/task-square.png'),
-                "Next Activities:", "Electrical..."),
-          ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => InspectionInfoPage(),
+          ),
+        );
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                spreadRadius: 1,
+                blurRadius: 6,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              _buildInfoRow(Image.asset('assets/images/location.png'),
+                  "Location:", "Room 04"),
+              _buildDivider(),
+              _buildInfoRow(Image.asset('assets/images/task-square.png'),
+                  "Construction Activities:", "Drywall..."),
+              _buildDivider(),
+              _buildProgressRow(),
+              _buildDivider(),
+              _buildInfoRow(Image.asset('assets/images/task-square.png'),
+                  "Next Activities:", "Electrical..."),
+            ],
+          ),
         ),
       ),
     );

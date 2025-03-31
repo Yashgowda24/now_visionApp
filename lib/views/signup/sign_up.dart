@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:now_vision/styles/text_styles.dart';
-import 'package:now_vision/views/main_menu.dart';
+import 'package:now_vision/views/main%20menu/main_menu.dart';
 import 'package:now_vision/widgets/blue_button.dart';
 import 'package:now_vision/widgets/now_vision_title.dart';
 import 'package:now_vision/widgets/textfield_widget.dart';
