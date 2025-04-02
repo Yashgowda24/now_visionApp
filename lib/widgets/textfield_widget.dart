@@ -4,8 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 class TextFieldWidget extends StatelessWidget {
   final String text;
   final TextEditingController controller;
+  final bool hideText;
 
-  TextFieldWidget({required this.text, required this.controller});
+  TextFieldWidget(
+      {required this.text, required this.controller, this.hideText = false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class TextFieldWidget extends StatelessWidget {
               height: 0,
             ),
             TextField(
+              obscureText: hideText,
               controller: controller,
               style: GoogleFonts.outfit(
                 fontSize: 16.0,

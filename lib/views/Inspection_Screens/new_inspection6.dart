@@ -23,54 +23,59 @@ class _Inspection6State extends State<Inspection6> {
           text: 'Start New Inspection',
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 30.0),
-          child: Column(
-            children: [
-              InspectionWidget(
-                text: 'Image Review',
-                image: Image.asset('assets/images/Progress_indicator6.png'),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    child: Image.asset(
-                      'assets/images/image_preview.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Positioned(
-                    top: 10.0,
-                    child: Text(
-                      'Storage Image Preview',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 16.0,
-                        color: Color.fromRGBO(255, 255, 255, 1),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: Column(
+              children: [
+                InspectionWidget(
+                  text: 'Image Review',
+                  image: Image.asset('assets/images/Progress_indicator6.png'),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Image.asset(
+                        'assets/images/image_preview.png',
+                        fit: BoxFit.cover,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              BlueColorFullWidthButton(text: 'Download', onPressed: () {}),
-              SizedBox(
-                height: 20.0,
-              ),
-              RedColorFullWidthButton(
-                text: 'Delete',
-                onPressed: () {},
-                textStyle: TextStyles.redButtonTextStyle,
-              ),
-            ],
+                    Positioned(
+                      top: 10.0,
+                      child: Text(
+                        'Storage Image Preview',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          fontSize: 16.0,
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                BlueColorFullWidthButton(text: 'Download', onPressed: () {}),
+                SizedBox(
+                  height: 20.0,
+                ),
+                RedColorFullWidthButton(
+                  text: 'Delete',
+                  onPressed: () {},
+                  textStyle: TextStyles.redButtonTextStyle,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+              ],
+            ),
           ),
         ),
       ),

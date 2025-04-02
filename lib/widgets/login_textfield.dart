@@ -3,8 +3,9 @@ import 'package:now_vision/styles/text_styles.dart';
 
 class LoginScreenTextField extends StatelessWidget {
   final String text;
+  final bool hideText;
 
-  LoginScreenTextField({required this.text});
+  LoginScreenTextField({required this.text, required this.hideText});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,6 +13,7 @@ class LoginScreenTextField extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.9,
         child: TextField(
+          obscureText: hideText,
           decoration: InputDecoration(
             hintText: text,
             hintStyle: TextStyles.loginScreenNameField,

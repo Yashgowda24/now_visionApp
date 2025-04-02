@@ -49,12 +49,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 16.0,
                 ),
                 TextFieldWidget(
-                    text: 'Current Password', controller: passwordController),
+                  text: 'Current Password',
+                  controller: passwordController,
+                  hideText: true,
+                ),
                 SizedBox(
                   height: 16.0,
                 ),
                 TextFieldWidget(
-                    text: 'New Password', controller: newpasswordController),
+                  text: 'New Password',
+                  controller: newpasswordController,
+                  hideText: true,
+                ),
                 SizedBox(
                   height: 16.0,
                 ),
